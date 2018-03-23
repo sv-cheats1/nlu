@@ -3,9 +3,9 @@
 
 using namespace std;
 
-unordered_set<string> months;
-unordered_set<string> days;
-unordered_set<string> number_clock;
+vector<string> months;
+vector<string> days;
+vector<string> number_clock;
 
 void preKMP(string pattern, int f[]) {
     int m = pattern.length(), k;
@@ -23,7 +23,7 @@ void preKMP(string pattern, int f[]) {
     }
 }
  
-bool KMP(string pattern, string target) {
+int KMP(string pattern, string target) {
 	transform(pattern.begin(), pattern.end(), pattern.begin(), ::tolower);
 	transform(target.begin(), target.end(), target.begin(), ::tolower);
     int m = pattern.length();
@@ -42,17 +42,17 @@ bool KMP(string pattern, string target) {
             i++;
             k++;
             if (k == m)
-                return 1;
+                return k-m;
         }
 
         else
             k = f[k];
     }
 
-    return 0;
+    return -1;
 }
 
-void make_sets() {
+void make_day_date_time_vectors() {
 	vector<string> filenames;
 	DIR *dir;
 	struct dirent *ent;
@@ -75,7 +75,7 @@ void make_sets() {
 			char temp[250];
 			while(stream) {
 				stream.getline(temp, 250);
-				if (stream) months.insert(temp);
+				if (stream) months.push_back(temp);
 			}
 			stream.close();
 		}
@@ -86,7 +86,7 @@ void make_sets() {
 			char temp[250];
 			while(stream) {
 				stream.getline(temp, 250);
-				if (stream) days.insert(temp);
+				if (stream) days.push_back(temp);
 			}
 			stream.close();
 		}
@@ -97,23 +97,37 @@ void make_sets() {
 			char temp[250];
 			while(stream) {
 				stream.getline(temp, 250);
-				if (stream) number_clock.insert(temp);
+				if (stream) number_clock.push_back(temp);
 			}
 			stream.close();
 		}
 	}
 }
 
-int main() {
-	make_sets();
-	unordered_set<string>::iterator it;
-	for (it = months.begin(); it != months.end(); ++it) {
-		cout << *it << endl;
-	}
+bool is_day_present(string s) {
+	vector<string>::iterator it;
 	for (it = days.begin(); it != days.end(); ++it) {
-		cout << *it << endl;
+		int flag = KMP(*it, s);
+		if (flag != -1) cout << "Mil gaya: " << *it << " idhar mila" << flag << endl;
 	}
-	for (it = number_clock.begin(); it != number_clock.end(); ++it) {
-		cout << *it << endl;
-	}
+}
+
+// void integrate(string input) {
+
+// }
+
+int main() {
+	make_day_date_time_vectors();
+	string s = "aaj ko english me today bolte hain";
+	is_day_present(s);
+	// vector<string>::iterator it;
+	// for (it = months.begin(); it != months.end(); ++it) {
+	// 	cout << *it << endl;
+	// }
+	// for (it = days.begin(); it != days.end(); ++it) {
+	// 	cout << *it << endl;
+	// }
+	// for (it = number_clock.begin(); it != number_clock.end(); ++it) {
+	// 	cout << *it << endl;
+	// }
 }
