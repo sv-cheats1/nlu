@@ -5,6 +5,5 @@ wednesday
 thursday
 friday
 saturday
-yesterday
 today
 tomorrow
