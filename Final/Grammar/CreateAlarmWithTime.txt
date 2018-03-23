@@ -1,0 +1,4 @@
+{please_concept} {wake_concept} alarm at <dateTime> for me
+{please_concept} {create_concept} an Alarm at <dateTime> thanks
+I want to {wake_concept} at <dateTime> {please_concept}
+on <dateTime> {create_concept} an alram for me thanks

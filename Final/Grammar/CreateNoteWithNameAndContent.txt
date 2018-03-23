@@ -1,0 +1,3 @@
+{please_concept} {create_concept} a note with {name_concept} <note_name> and write <note_content> in it
+insert <note_content> in a note with {name_concept} <note_name> and save
+{please_concept} note down <note_content> for me in <note_name>
