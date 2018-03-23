@@ -104,12 +104,32 @@ void make_day_date_time_vectors() {
 	}
 }
 
-bool is_day_present(string s) {
+string replace_day(string s) {
 	vector<string>::iterator it;
 	for (it = days.begin(); it != days.end(); ++it) {
 		int flag = KMP(*it, s);
-		if (flag != -1) cout << "Mil gaya: " << *it << " idhar mila" << flag << endl;
+		if (flag != -1) {
+			// cout << "Mil gaya: " << *it << " idhar mila" << flag << endl;
+			s.erase(flag, (*it).length());
+			s.insert(flag, "<day>");
+			cout << s << endl;
+		}
 	}
+	return s;
+}
+
+string replace_number(string s) {
+	vector<string>::iterator it;
+	for (it = number_clock.begin(); it != number_clock.end(); ++it) {
+		int flag = KMP(" " + (*it) + " ", s);
+		if (flag != -1) {
+			cout << "Mil gaya: " << *it << " idhar mila" << flag << endl;
+			s.erase(flag, (*it).length() + 2);
+			s.insert(flag, " <number> ");
+			cout << s << endl;
+		}
+	}
+	return s;
 }
 
 // void integrate(string input) {
@@ -118,8 +138,9 @@ bool is_day_present(string s) {
 
 int main() {
 	make_day_date_time_vectors();
-	string s = "aaj ko english me today bolte hain";
-	is_day_present(s);
+	string s = "aaj to 12 tareekh sunday hai bc";
+	s = replace_day(s);
+	s = replace_number(s);
 	// vector<string>::iterator it;
 	// for (it = months.begin(); it != months.end(); ++it) {
 	// 	cout << *it << endl;
