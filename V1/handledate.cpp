@@ -42,7 +42,7 @@ int KMP(string pattern, string target) {
             i++;
             k++;
             if (k == m)
-                return k-m;
+                return i - k;
         }
 
         else
