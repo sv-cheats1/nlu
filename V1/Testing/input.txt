@@ -1,0 +1,24 @@
+Case#1:
+Can you please set an alarm at 3 pm tomorrow
+Case#2:
+Create tomorrow 8 pm event at Bangalore
+Case#3:
+please create an alarm for 8 am meanwhile send email to Amitabh
+Case#4:
+Send an email to Amitabh and Shah rukh
+Case#5:
+Can you tell me when will it rain in Bangalore after 6 a.m. tomorrow and Find out What is time in London now thanks
+Case#6:
+Search for Rahul and send an email for me
+Case#7:
+Can you make a call to Amitabh for me and Update me about weather in New York 
+Case#8:
+Find out What is time in London now thanks
+Case#9:
+What is time now
+Case#10:
+create an event for 8 am also create an alarm for 6 am
+Case#11:
+Can you search Amitabh in contacts
+Case#12:
+What is the weather in Bangalore tomorrow at 5 PM
