@@ -1,0 +1,2 @@
+{please_concept} {call_concept} <contact_name> for me
+I want to {talk_concept} with <contact_name> thanks

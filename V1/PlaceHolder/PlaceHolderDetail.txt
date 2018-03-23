@@ -1,0 +1,6 @@
+<contact_name>	FileLookup	contact_name.txt
+<place>	FileLookup	places.txt
+<dateTime>	Codded	DateTimePlaceHolder
+<day>	Codded	DayPlaceHolder
+<date>	Codded	DatePlaceHolder
+<number>	Codded	NumberPlaceHolder

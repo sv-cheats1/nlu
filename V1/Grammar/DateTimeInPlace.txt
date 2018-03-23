@@ -1,0 +1,3 @@
+{please_concept} {what_concept} time <place> thanks
+{please_concept} {tell_concept} time  <place> thanks
+at <place> {what_concept} time please

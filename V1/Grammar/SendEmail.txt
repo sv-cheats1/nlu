@@ -1,0 +1,5 @@
+{please_concept} {email_concept} <contact_name> for me
+I want to {message_concept} to <contact_name> via   {email_concept} thanks
+{please_concept} {search} <contact_name> and {email_concept} <contact_name> for me
+send {email_concept} to <contact_name>
+send {email_concept} to <contact_name> and <contact_name>
