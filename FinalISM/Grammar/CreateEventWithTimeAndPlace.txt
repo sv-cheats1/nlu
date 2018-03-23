@@ -1,0 +1,4 @@
+{please_concept} {create_concept} an event at <place> on <dateTime> thanks
+{please_concept} {create_concept} <dateTime> an event at <place> for me thanks
+on <dateTime> {please_concept} {create_concept} an event to be held at <place> thanks
+{please_concept} {create_concept} an event for me scheduled for <dateTime> on <place>

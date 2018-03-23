@@ -1,0 +1,4 @@
+{please_concept} {tell_concept} weather of <place> at <dateTime>
+{please_concept}{tell_concept} about {weather_activity} in <place> at <dateTime> thanks
+{what_concept} the weather of <place> at <dateTime>
+on <dateTime> {what_concept} weather at <place>

@@ -132,13 +132,26 @@ string replace_number(string s) {
 	return s;
 }
 
+string replace_date(string s) {
+	vector<string>::iterator it;
+	for (it = months.begin(); it != months.end(); ++it) {
+		int flag = KMP(" " + (*it) + " ", s);
+		if (flag != -1) {
+			cout << "Mil gaya: " << *it << " idhar mila" << flag << endl;
+			s.erase(flag, (*it).length() + 2);
+			s.insert(flag, " <month> ");
+			cout << s << endl;
+		}
+	}
+}
+
 // void integrate(string input) {
 
 // }
 
 int main() {
 	make_day_date_time_vectors();
-	string s = "aaj to 12 tareekh sunday hai bc";
+	string s = "the time is 12 am tomorrow";
 	s = replace_day(s);
 	s = replace_number(s);
 	// vector<string>::iterator it;

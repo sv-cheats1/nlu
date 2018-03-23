@@ -1,0 +1,33 @@
+Testing/input.txt :
+Case#1:
+I want you to make tomorrow 9 O clock morning event
+Case#2:
+Create tomorrow 9:30 p.m. event at Bangalore
+Case#3:
+ Can you please set a team lunch alarm at 11 am tomorrow 
+Case#4:
+Can you make a call to Amitabh for me
+Case#5:
+Send an email to Rahul Dravid
+Case#6:
+Update me about weather in New York thanks
+Case#7:
+Can you tell me when will it rain in Bangalore at 6 a.m. tomorrow
+Case#8:
+Find out What is time in London now thanks
+Case#9:
+What is time now
+Case#10:
+What is date today
+Case#11:
+Can you book a flight ticket on 14 February from Bangalore to ranchi
+Case#12:
+on 5 a.m. tomorrow make build body alarm please
+Case#13:
+with name go to make money create a alarm at 8 a.m. tomorrow
+Case#14:
+please make a note with title shopping list and write milk egg butter in it
+Case#15:
+can you please note down 100 dollar for patrol for me in trip expanse
+Case#16:
+would you please search fruit and juice and rename to monkey in market in event application
