@@ -1,0 +1,2 @@
+{please_concept} {email_concept} <contact_name> for me
+I want to {message_concept} to <contact_name> via   {email_concept} thanks
