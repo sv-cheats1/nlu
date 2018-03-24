@@ -189,13 +189,8 @@ string replace_colon_time(string s) {
 }
 
 string replace_o_clock(string s) {
-	// handle output
 	int pos1 = KMP("O clock morning", s);
 	int pos2 = KMP("O'clock morning", s);
-	// int pos3 = KMP("O clock evening", s);
-	// int pos4 = KMP("O'clock evening", s);
-	// int pos5 = KMP("O clock night", s);
-	// int pos6 = KMP("O'clock night", s);
 	if (pos1 != -1) { 
 		s.erase(pos1, 15);
 		s.insert(pos1, "am");
@@ -206,44 +201,8 @@ string replace_o_clock(string s) {
 		s.insert(pos2, "am");
 		o_clock = 1;
 	}
-	// if (pos3 != -1) {
-	// 	s.erase(pos3, 15);
-	// 	s.insert(pos3, "pm");
-	// 	o_clock = true;
-	// }
-	// if (pos4 != -1) {
-	// 	s.erase(pos4, 15);
-	// 	s.insert(pos4, "pm");
-	// 	o_clock = true;
-	// }
-	// if (pos5 != -1) {
-	// 	s.erase(pos5, 13);
-	// 	s.insert(pos5, "pm");
-	// 	o_clock = true;
-	// }
-	// if (pos6 != -1) {
-	// 	s.erase(pos6, 13);
-	// 	s.insert(pos6, "pm");
-	// 	o_clock = true;
-	// }
 	return s;
 }
-
-// string revert_o_clock(string s) {
-	// cout << "o_clock: " << o_clock << endl;
-	// cout << "string: " << s << endl;
-	// if (1) {
-	// 	cout << "Yaha bakchodi nahi hai";
-	// 	int flag = KMP("yaha", "bakchodi yaha nahi hai");
-	// 	cout << "Yaha pahuch gaya: " << flag;
-	// 	if (flag != -1) {
-	// 		s.erase(flag, 2);
-	// 		s.insert(flag, "O clock");
-	// 	}
-	// } else {
-	// 	return s;
-	// }
-// }
 
 void handle_number_orders() {
 	sort(number_orders.begin(), number_orders.end());
@@ -281,13 +240,10 @@ string reconstruct_datetime() {
 				}
 			}
 			return s;
-		} else {
-			return "";
 		}
-	}
-	else {
 		return "";
 	}
+	return "";
 }
 
 string date_time_string() {
