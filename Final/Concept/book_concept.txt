@@ -1,4 +1,0 @@
-book
-create
-make
-generate

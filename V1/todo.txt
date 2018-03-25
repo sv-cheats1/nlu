@@ -1,0 +1,5 @@
+remove preKMP and KMP functions -44
+make_custom_resource and make_conjunctions are the exact same function -26
+concepts_that_are_present and placeholders_that_are_present are the same function -10
+is_concept_present and is_placeholder_present are the same function -10
+find_grammar_scores_concept and find_placeholder_scores_concept are the same function -13

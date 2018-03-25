@@ -9,8 +9,6 @@ vector<string> number_calendar;
 vector<string> datetimeformats;
 vector<string> dateformats;
 vector<int> year;
-vector<pair<string, string>> placeholder_values;
-vector<pair<int, string>> number_orders;
 int o_clock = false;
 
 void preKMP(string pattern, int f[]) {
@@ -126,7 +124,7 @@ void make_day_date_time_vectors() {
 	}
 }
 
-string replace(string s, vector<string> v, string replacement) {
+string replace(string s, vector<string> v, string replacement, vector<pair<int, string>> &number_orders, vector<pair<string, string>> &placeholder_values) {
 	vector<string>::iterator it;
 	for (it = v.begin(); it != v.end(); ++it) {
 		int flag = KMP(" " + *it + " ", s);
@@ -146,7 +144,7 @@ string replace(string s, vector<string> v, string replacement) {
 	return s;
 }
 
-string replace_year(string s) {
+string replace_year(string s, vector<pair<string, string>> &placeholder_values) {
 	int count = 0;
 	for (int i = 0; i < s.length(); ++i) {
 		if (s[i] >= 48 && s[i] <= 57 || s[i] == 32) {
@@ -169,7 +167,7 @@ string replace_year(string s) {
 	return s;
 }
 
-string replace_colon_time(string s) {
+string replace_colon_time(string s, vector<pair<int, string>> &number_orders) {
 	regex r1("( )([[:digit:]]{1})(:)([[:digit:]]{2})");
 	regex r2("( )([[:digit:]]{2})(:)([[:digit:]]{2})");
 	smatch sm;
@@ -204,7 +202,7 @@ string replace_o_clock(string s) {
 	return s;
 }
 
-void handle_number_orders() {
+void handle_number_orders(vector<pair<int, string>> &number_orders, vector<pair<string, string>> &placeholder_values) {
 	sort(number_orders.begin(), number_orders.end());
 	vector<pair<int, string>>::iterator it;
 	for (it = number_orders.begin(); it != number_orders.end(); ++it) {
@@ -212,7 +210,7 @@ void handle_number_orders() {
 	}
 }
 
-string reconstruct_datetime() {
+string reconstruct_datetime(vector<pair<string, string>> &placeholder_values) {
 	vector<pair<string, string>>::iterator it;
 	if (placeholder_values.size() > 0) {
 		it = placeholder_values.end() - 1;
@@ -246,27 +244,8 @@ string reconstruct_datetime() {
 	return "";
 }
 
-string date_time_string() {
-	make_day_date_time_vectors();
-	string s = "on 5 a.m. tomorrow make build body alarm please ";
-	string save = s;
-	s = replace_o_clock(s);
-	s = replace(s, number_calendar, "<number>");
-	s = replace_colon_time(s);
-	handle_number_orders();
-	s = replace(s, days, "<day>");
-	s = replace(s, months, "<month>");
-	s = replace_year(s);
-	s = replace(s, dateformats, "<date>");
-	s = replace(s, datetimeformats, "<dateTime>");
-	if (KMP("<dateTime>", s) != -1) {
-		return s;
-	}
-	return save;
-}
-
-string date_time_value() {
-	string reconstructed = reconstruct_datetime();
+string date_time_value(vector<pair<string, string>> &placeholder_values) {
+	string reconstructed = reconstruct_datetime(placeholder_values);
 	reconstructed += " ";
 	if (reconstructed.length() > 1) {
 		if (o_clock == 1) {
@@ -281,9 +260,35 @@ string date_time_value() {
 	return "";
 }
 
-int main() {
-	string date_time_str = date_time_string();
-	string date_time_val = date_time_value();
-	cout << date_time_str << endl;
+string date_time_string(string s) {
+	make_day_date_time_vectors();
+	string save = s;
+	vector<pair<int, string>> number_orders;
+	vector<pair<string, string>> placeholder_values;
+	s = replace_o_clock(s);
+	s = replace(s, number_calendar, "<number>", number_orders, placeholder_values);
+	s = replace_colon_time(s, number_orders);
+	handle_number_orders(number_orders, placeholder_values);
+	s = replace(s, days, "<day>", number_orders, placeholder_values);
+	s = replace(s, months, "<month>", number_orders, placeholder_values);
+	s = replace_year(s, placeholder_values);
+	s = replace(s, dateformats, "<date>", number_orders, placeholder_values);
+	s = replace(s, datetimeformats, "<dateTime>", number_orders, placeholder_values);
+	// Ye placeholder ki value deta hai.
+	string date_time_val = date_time_value(placeholder_values);
 	cout << date_time_val << endl;
+	if (KMP("<dateTime>", s) != -1) {
+		return s;
+	}
+	return save;
+}
+
+int main() {
+	string s = "on 5 a.m. tomorrow make build body alarm please ";
+	string date_time_str = date_time_string(s);
+	cout << date_time_str << endl;
+
+	string s2 = "hello bitch 6 may 1998 5:30 pm mai paida hua tha bc";
+	string date_time_str2 = date_time_string(s2);
+	cout << date_time_str2 << endl;
 }

@@ -1,0 +1,4 @@
+{please_concept} {wake_concept} alarm at <dateTime> for me and {name_concept} it <alarm_name>
+{please_concept} {create_concept} an Alarm at <dateTime> with {name_concept} <alarm_name> thanks
+on <dateTime> {create_concept} <alarm_name>  alram please
+with {name_concept}  <alarm_name> {create_concept} an alram for me at <dateTime> thanks
