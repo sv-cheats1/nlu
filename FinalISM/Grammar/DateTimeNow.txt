@@ -1,2 +1,0 @@
-{please_concept} {what_concept} time now
-{please_concept} {tell_concept} time now
