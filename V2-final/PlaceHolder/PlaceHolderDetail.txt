@@ -1,0 +1,11 @@
+<contact_name>	FileLookup	contact_name.txt
+<place>	FileLookup	places.txt
+<dateTime>	Codded	DateTimePlaceHolder
+<day>	Codded	DayPlaceHolder
+<date>	Codded	DatePlaceHolder
+<number>	Codded	NumberPlaceHolder
+<alarm_name>	openPhrase	AlarmNameOpenPhrase
+<note_name>	openPhrase	NoteNameOpenPhrase
+<note_content>	openPhrase	NoteContentOpenPhrase
+<src_event_name>	openPhrase	SrcEventNameOpenPhrase
+<tgt_event_name>	openPhrase	TgtEventNameOpenPhrase

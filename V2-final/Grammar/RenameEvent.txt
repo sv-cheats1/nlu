@@ -1,0 +1,3 @@
+{please_concept} rename <src_event_name> event to <tgt_event_name>
+{please_concept} {search_concept} <src_event_name> and rename to <tgt_event_name> in even application
+{search_concept} for event <src_event_name> convert its {name_concept} to <tgt_event_name> for me thanks

@@ -1,0 +1,55 @@
+Testing/input.txt :
+Case#1:
+make ticket from los angeles to delhi
+Case#2:
+make ticket from taj to delhi
+Case#3:
+make ticket from lakhnau to ahmedabad 
+Case#4:
+speak with nirav modi please
+Case#5:
+speak with nirav singh please
+Case#6:
+with title get up and create test case make alarm at 9 a.m. today please
+Case#7:
+with title get up and create test case make alarm at 9 o clock morning tomorrow please
+Case#8:
+on 4:40 o clock produce alarm thanks
+Case#9:
+on morning 4:40 o clock produce alarm thanks
+Case#10:
+please make 4 o clock event
+Case#11:
+please make morning 4 o clock event
+Case#12:
+make event scheduled for 2:30 p.m. on delhi
+Case#13:
+on 8 p.m. today make event at ahmedabad
+Case#14:
+make note with title read and write and write chicken in egg
+Case#15:
+make note with title read and write and write chicken in egg in it
+Case#16:
+insert i have five rupee note how many eggs i can get with this note in a note with title question and answer and save
+Case#17:
+insert i have five rupee note how many eggs i can get with this note in a note with title question and answer
+Case#18:
+find for taj mahal and agra and rename to jack in new delhi in event application
+Case#19:
+look for breakfast and rename to lunch in event
+Case#20:
+text to raghav kumar via email
+Case#21:
+send email to romi taj please
+Case#22:
+send mail to raghav kumar please
+Case#23:
+weather of los angeles
+Case#24:
+weather of delhi
+Case#25:
+weather in delhi at 7 o clock morning
+Case#26:
+brief about thunderstrom in delhi at 9 o clock morning
+Case#27:
+brief about thunderstrom in los angeles at 9 o clock

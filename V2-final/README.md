@@ -1,43 +1,38 @@
-# Natural Language Understanding
----
-The solution to a NLU problem statement by
-Mohit Tripathi, Aditya Sharma, Pratyush Mishra, Abhay Gaur and Aman Deep Singh
-
 >Our algorithm has been tested for correctness on the Windows operating system with C++11. It has also been tested on Ubuntu 16.04 LTS using the flag -std=gnu++11
 
-## KEY-POINTS OF THE MODEL/ALGORITHM
+## KEY-POINTS OF OUR MODEL/ALGORITHM
 
-1. __Assigning of priority-based weights__: Unit weights are assigned to the possible grammars on the basis of presence of concepts, placeholders and keywords. In case of keywords, we have created a list of reject words (articles, prepositions) and added them to the custom resource folder. The keywords which are not present in the reject word list are assigned value of 1 whereas the keywords which occur in the name of a grammar are given weights of 2 (Reject words present in the grammar names are removed before checking for the occurrence of keywords). This step ensures the generality and robustness of the algorithm to the addition of new grammars. 
+1. __Assigning of priority-based weights__: Unit weights are assigned to the possible grammars on the basis of presence of concepts, placeholders and keywords. In case of keywords, we have created a list of reject words (articles, prepositions) and added them to our custom resource folder. The keywords which are not present in the reject word list are assigned value of 1 whereas the keywords which occur in the name of a grammar are given weights of 2 (Reject words present in the grammar names are removed before checking for the occurrence of keywords). This step ensures the generality and robustness of the algorithm to the addition of new grammars. 
 
 2. __Generalization of open-phrase keywords__: We've not hard-coded any open-phrase keywords. The types of the open-phrase keywords have been loaded from PlaceHolderDetails.txt and if any further types of open-phrase placeholders are added in the future to PlaceHolderDetails.txt, they'll get incorporated into the program automatically (without the loss of generality).
 
-3. __Handling of spelling-mistakes in keywords using cosine similarity__: We handle spelling mistakes in the keywords by cosine similarity of two keywords that have a difference in spelling. Two keywords with different spelling are treated as the same if they have cosine similarity greater than a minimum threshold which can be varied (currently set to 75%). We have implemented the function in python and attached as cosine similarity but were unable to incorporate into the program within the stipulated time of the hackathon.
+3. __Handling of spelling-mistakes in keywords using cosine similarity__: We handle spelling mistakes in the keywords by cosine similarity of two keywords that have a difference in spelling. Two keywords with different spelling are treated as the same if they have cosine similarity greater than a minimum threshold which can be varied (currently set to 75%). We have implemented the function in python and attached as cosine similarity but were unable to incorporate into our program within the stipulated time of the hackathon.
 
 4. __Deciding between grammars that have same weights__: Since the grammars having same weights are similar we propose to differentiate between them by searching for the presence of synonyms of the keywords that are exclusive to each of the conflicting grammar names.
 
 5. __Inclusion of custom resources for improving accuracy__: We have included a dataset of more than 15,000 common and celebrity names. Also we've included around 500 place names (city names).
 
-6. __Use of high performance pattern-matching algorithms__: In order to boost the running time of the algorithm, we have used the Knuth-Morris-Pratt (KMP) algorithm wherever possible as it is one of the fastest string pattern matching algorithms.
+6. __Use of high performance pattern-matching algorithms__: In order to boost the running time of our algorithm, we have used the Knuth-Morris-Pratt (KMP) algorithm wherever possible as it is one of the fastest string pattern matching algorithms.
 
-7. __Use of optimal data-structures__: The datastructures used are stl implementations of red-black trees and hashmaps which further boost the running time of the algorithm.
+7. __Use of optimal data-structures__: The datastructures used are stl implementations of red-black trees and hashmaps which further boost the running time of our algorithm.
 
 
 ## ERRATA
 
-During the conception and integration of the algorithm into a wholesome model, we encountered the following inconsistencies in the files provided to us: 
+During the conception and integration of our algorithm into a wholesome model, we encountered the following inconsistencies in the files provided to us: 
 
 * The inclusion of proper nouns in the provided files was not in line with the sample test cases. To handle this, we have added a dataset of approximately 15000 proper nouns as a custom resource file.
 
 * Multiple test cases included the mention of "London" as a place, whereas the same was not included in "places.txt" as a valid place input. To handle this, we have added a dataset of approximately 500 place names as a custom resource file.
 
-* "Update", naturally exists as a "tell" concept, but was not included in the text file "tell_concept.txt". To overcome this problem, we could include "Update" into the concepts data structure, which we have not done so as to minimize hard-coding. Since we were not allowed to modify the files provided to us and were supposed to keep the code as generalized as possible, we have left Case #7 with an incomplete output. To generate the correct output, the file can be modified to include the valid string or "Update" can be hard-coded into the data structure.
+* "Update", naturally exists as a "tell" concept, but was not included in the text file "tell_concept.txt". To overcome this problem, we could include "Update" into our concepts data structure, which we have not done so as to minimize hard-coding. Since we were not allowed to modify the files provided to us and were supposed to keep the code as generalized as possible, we have left Case #7 with an incomplete output. To generate the correct output, the file can be modified to include the valid string or "Update" can be hard-coded into the data structure.
 
 * The `CreateAlarmByName` grammar included a spelling mistake and listed 'alarm' as 'alram'. The `RenameEvent` grammar also included a spelling mistake listing 'event' as 'even'.
 
 
 ## ABSTRACT
 
-The algorithm uses an approach in which we assign _scalar scores_ (representative of the probability that the corresponding grammar is the grammar of the input string) to each of the grammars based on the concepts/placeholders/keywords present in the input string and finally the grammar with the highest scalar score is written to the final output file. Based on the inner workings of the algorithm, detection of the values of the placeholders such as contact names and places, was trivially implemented by storing the location of the substring that was being used to detect their presence.
+Our algorithm uses an approach in which we assign _scalar scores_ (representative of the probability that the corresponding grammar is the grammar of the input string) to each of the grammars based on the concepts/placeholders/keywords present in the input string and finally the grammar with the highest scalar score is written to the final output file. Based on the inner workings of our algorithm, detection of the values of the placeholders such as contact names and places, was trivially implemented by storing the location of the substring that was being used to detect their presence.
 
 Handling open-phrases involved the detection of the grammar line (from the predicted grammar file) which most closely corresponded to the input string. After this step, a rejection-based scheme was implemented which removed all the concept phrases, placeholders such as contact names and places and reject-words such as articles and prepositions and extracted the open-phrases from the remaining string.
 

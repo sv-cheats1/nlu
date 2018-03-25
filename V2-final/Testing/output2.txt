@@ -1,0 +1,96 @@
+Case#1:
+BookTicket
+<place> : "delhi"
+<place> : "los angeles"
+Case#2:
+BookTicket
+<place> : "delhi"
+<place> : "taj"
+Case#3:
+BookTicket
+<place> : "ahmedabad"
+<place> : "lakhnau"
+Case#4:
+CallByName
+<contact_name> : "nirav modi"
+Case#5:
+CallByName
+<contact_name> : "nirav singh"
+Case#6:
+CreateAlarmByName
+<alarm_name> : "get up and {create_concept} test case make alarm at <datetime> please  "
+<dateTime> : "9 a.m. today "
+Case#7:
+CreateAlarmByName
+<alarm_name> : "get up and {create_concept} test case make alarm at <datetime> please  "
+<dateTime> : "9 O clock tomorrow "
+Case#8:
+CreateAlarmByName
+<alarm_name> : "ate_concept} alarm thanks  "
+Case#9:
+CreateAlarmByName
+<alarm_name> : "ock {create_concept} alarm thanks  "
+Case#10:
+CreateEventWithTime
+Case#11:
+CreateEventWithTime
+Case#12:
+CreateEventWithTimeAndPlace
+<dateTime> : "2:30 p.m. "
+<place> : "delhi"
+Case#13:
+CreateEventWithTimeAndPlace
+<dateTime> : "8 p.m. today "
+<place> : "ahmedabad"
+Case#14:
+CreateNoteWithNameAndContent
+<note_content> : "and write chicken in egg  "
+<note_name> : "read"
+Case#15:
+CreateNoteWithNameAndContent
+<note_content> : "and write chicken in egg"
+<note_name> : "read"
+Case#16:
+CreateNoteWithNameAndContent
+<note_content> : "i have five rupee note how many eggs i can get with this note"
+<note_name> : "question and answer"
+Case#17:
+CreateNoteWithNameAndContent
+<note_content> : "i have five rupee note how many eggs i can get with this note"
+<note_name> : "question and answer  "
+Case#18:
+RenameEvent
+<place> : "new delhi"
+<place> : "taj mahal"
+<src_event_name> : "gra"
+<tgt_event_name> : "jack in <place> in event application  "
+Case#19:
+RenameEvent
+<src_event_name> : "unch in event  "
+<tgt_event_name> : "l<src_event_name>"
+Case#20:
+SendEmail
+<contact_name> : "raghav kumar"
+Case#21:
+SendEmail
+<contact_name> : "romi taj"
+Case#22:
+SendEmail
+<contact_name> : "raghav kumar"
+Case#23:
+WeatherInCity
+<place> : "los angeles"
+Case#24:
+WeatherInCity
+<place> : "delhi"
+Case#25:
+WeatherTimeCity
+<dateTime> : "7 O clock "
+<place> : "delhi"
+Case#26:
+WeatherTimeCity
+<dateTime> : "9 O clock "
+<place> : "delhi"
+Case#27:
+WeatherInCity
+<place> : "los angeles"

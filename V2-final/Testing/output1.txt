@@ -1,0 +1,55 @@
+Case#1:
+CreateEventWithTime
+<dateTime> : "tomorrow 9 O clock "
+Case#2:
+CreateEventWithTimeAndPlace
+<dateTime> : "tomorrow 9:30 p.m. "
+<place> : "bangalore"
+Case#3:
+CreateAlarmByName
+<alarm_name> : "cept} {create_concept} a team lunch alarm at <datetime>   "
+<dateTime> : "11 am tomorrow "
+Case#4:
+CallByName
+<contact_name> : "amitabh"
+Case#5:
+SendEmail
+<contact_name> : "rahul dravid"
+Case#6:
+WeatherInCity
+<place> : "new york"
+Case#7:
+WeatherTimeCity
+<dateTime> : "6 a.m. tomorrow "
+<place> : "bangalore"
+Case#8:
+DateTimeInPlace
+<place> : "london"
+Case#9:
+DateTimeNow
+Case#10:
+DateTimeNow
+Case#11:
+BookTicket
+<place> : "bangalore"
+<place> : "ranchi"
+Case#12:
+CreateAlarmByName
+<alarm_name> : "build body alarm please  "
+<dateTime> : "5 a.m. tomorrow "
+Case#13:
+CreateAlarmByName
+<alarm_name> : "go to make money {create_concept} a alarm at <datetime>  "
+<dateTime> : "8 a.m. tomorrow "
+Case#14:
+CreateNoteWithNameAndContent
+<note_content> : "milk egg butter"
+<note_name> : "shopping list"
+Case#15:
+CreateNoteWithNameAndContent
+<note_content> : "100 dollar for patrol"
+<note_name> : "trip expanse  "
+Case#16:
+RenameEvent
+<src_event_name> : "fruit and juice"
+<tgt_event_name> : "monkey in market in event application  "

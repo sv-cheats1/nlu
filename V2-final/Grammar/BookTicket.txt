@@ -1,0 +1,2 @@
+{please_concept} {book_concept} ticket from <place> to <place> thanks
+from <place> to <place> {book_concept} ticket for me thanks
