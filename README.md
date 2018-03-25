@@ -1,6 +1,8 @@
 # Natural Language Understanding
 ---
-The solution to a NLU problem statement by
+The solution to a NLU [problem statement](https://github.com/sv-cheats1/nlu/blob/master/V2-final/Problem2_final.docx)
+<br>
+Contributors:
 Mohit Tripathi, Aditya Sharma, Pratyush Mishra, Abhay Gaur and Aman Deep Singh
 
 >Our algorithm has been tested for correctness on the Windows operating system with C++11. It has also been tested on Ubuntu 16.04 LTS using the flag -std=gnu++11
